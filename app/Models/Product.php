@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-
+    public function featprod()
+    {
+        return $this->hasMany(Featprod::class);
+    }
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
 
     protected $fillable = [
         'product_id',

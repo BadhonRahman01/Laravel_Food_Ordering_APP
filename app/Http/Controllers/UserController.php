@@ -41,7 +41,6 @@ class UserController extends Controller
     {
         $user_data = $request->validate([
             // Hash::make($request->password),
-            'user_id' => 'required',
             'name' => 'required',
             'phone' => 'required|unique:users',
             'email' => 'nullable',

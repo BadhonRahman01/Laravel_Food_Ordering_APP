@@ -21,7 +21,7 @@ class UserController extends Controller
             $users = User::all();
             foreach ($users as $user) {
             //$user->pass = Hash::make($user->password);
-            unset($user->created_at,$user->updated_at,$user->user_id,$user->password,$user->email_verified_at,$user->remember_token);
+            unset($user->created_at,$user->updated_at,$user->password,$user->email_verified_at,$user->remember_token);
             }
             return response()->json([
                 'status' => true,

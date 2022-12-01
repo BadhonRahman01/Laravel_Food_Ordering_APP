@@ -1,8 +1,8 @@
-@extends('stores.layout')
- 
+@extends('welcome2')
+@section('title', 'Store Index')
 @section('content')
-    <div class="row py-4">
-        <div class="col-lg-12 margin-tb">
+    <div class="row py-5">
+        <div class="col-lg-12 margin-tb py-3">
             <div class="pull-left">
                 <h2>Store List</h2>
             </div>

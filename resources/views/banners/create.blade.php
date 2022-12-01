@@ -1,9 +1,11 @@
 
-@extends('banners.layout')
+@extends('welcome2')
   
+@section('title', 'Create Banner')
+
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
+<div class="row py-5">
+    <div class="col-lg-12 margin-tb py-2">
         <div class="pull-left">
             <h2>Add New Banner</h2>
         </div>

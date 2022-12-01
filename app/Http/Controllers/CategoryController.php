@@ -18,6 +18,8 @@ class CategoryController extends Controller
     
         return view('categories.index',compact('categories'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+        // $categories = Category::orderBy('id','desc')->paginate(5);
+        // return view('categories.index', compact('categories'));
     }
 
     /**
@@ -38,19 +40,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {   $category= $request->category_id;
-        if($request->hasFile('imageUrl')){
-            $picture = $request->imageUrl;
-            $file_name = "bn{$category}." . $picture->getClientOriginalExtension();
-            $picture->move(public_path('upload'), $file_name);
-
-        }
         $category_data = $request->validate([
             'category_id' => 'required',
             'name' => 'required',
             'imageUrl' => 'nullable',
             
         ]);
-        $category_data['imageUrl'] = "/public/upload/{$file_name}";
+
+        if($request->hasFile('imageUrl')){
+            $picture = $request->imageUrl;
+            $file_name = "bn{$category}." . $picture->getClientOriginalExtension();
+            $picture->move(public_path('upload'), $file_name);
+            $category_data['imageUrl'] = "/public/upload/{$file_name}";
+        }
+
+        
         Category::create($category_data);
      
         return redirect()->route('categories.index')

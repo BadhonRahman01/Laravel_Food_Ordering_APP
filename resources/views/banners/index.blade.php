@@ -1,7 +1,9 @@
-@extends('banners.layout')
+@extends('welcome2')
  
+@section('title', 'Banner Index')
+
 @section('content')
-    <div class="row py-4">
+    <div class="row py-5">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Banner List</h2>

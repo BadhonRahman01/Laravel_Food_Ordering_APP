@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ use Illuminate\Support\Facades\Route;
 //     '/users' => 'App\Http\Controllers\API\UserController',
 
 // ]);
+//Route::group(['middleware' => ['can:Access home']], function () {
+
+
 Route::apiResource('banners', 'App\Http\Controllers\API\BannerController');
 Route::apiResource('categories', 'App\Http\Controllers\API\CategoryController');
 Route::apiResource('featprods', 'App\Http\Controllers\API\FeatprodController');
@@ -36,6 +40,10 @@ Route::apiResource('services', 'App\Http\Controllers\API\ServiceController');
 Route::apiResource('stores', 'App\Http\Controllers\API\StoreController');
 Route::apiResource('users', 'App\Http\Controllers\API\UserController');
 
+Route::get('index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// });

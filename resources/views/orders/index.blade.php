@@ -1,8 +1,8 @@
-@extends('orders.layout')
- 
+@extends('welcome2')
+@section('title', 'Order Index')
 @section('content')
-    <div class="row py-4">
-        <div class="col-lg-12 margin-tb">
+    <div class="row py-5">
+        <div class="col-lg-12 margin-tb py-3">
             <div class="pull-left">
                 <h2>Order List</h2>
             </div>

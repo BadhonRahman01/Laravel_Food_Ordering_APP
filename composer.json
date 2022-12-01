@@ -6,7 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "cloudcreativity/laravel-json-api": "*",
         "guzzlehttp/guzzle": "^7.2",
+        "laravel-json-api/laravel": "^2.4",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",

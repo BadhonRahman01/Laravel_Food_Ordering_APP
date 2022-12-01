@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
+
+
+    public function category() {
+
+        return $this->belongsTo(Category::class, 'foreign_key');
+    }
     protected $fillable = [
         'menu_id',
         'name',

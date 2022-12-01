@@ -1,9 +1,9 @@
 
-@extends('users.layout')
-  
+@extends('welcome2')
+@section('title', 'Create User')
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
+<div class="row py-5">
+    <div class="col-lg-12 margin-tb py-3">
         <div class="pull-left">
             <h2>Add New User</h2>
         </div>
@@ -27,13 +27,7 @@
 <form action="{{ route('users.store') }}" method="POST">
     @csrf
   
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>User ID:</strong>
-                <input type="integer" name="user_id" class="form-control" placeholder="ID">
-            </div>
-        </div>
+
         
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

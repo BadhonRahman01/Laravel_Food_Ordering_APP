@@ -1,9 +1,9 @@
 
-@extends('menus.layout')
-   
+@extends('welcome2')
+@section('title', 'Edit Menu')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
+    <div class="row py-5">
+        <div class="col-lg-12 margin-tb py-3">
             <div class="pull-left">
                 <h2>Edit Menu</h2>
             </div>

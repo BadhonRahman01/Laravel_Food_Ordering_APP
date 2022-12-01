@@ -9,6 +9,15 @@ class Order extends Model
 {
     use HasFactory;
 
+    public function product() {
+
+        return $this->belongsTo(Product::class, 'foreign_key');
+    }
+    public function store() {
+
+        return $this->belongsTo(Store::class, 'foreign_key');
+    }
+
     
     protected $fillable = [
         'order_id',
