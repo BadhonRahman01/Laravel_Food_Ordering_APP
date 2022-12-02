@@ -24,24 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // try{
-        //     $services = Service::all();
-        //     foreach ($services as $service) {
-        //     unset($service->created_at,$service->updated_at,$service->service_id);
-        //     }
-        //     $s = response()->json([
-        //         'status' => true,
-        //         'data' => $services,
-        //         'message' => 'Service list Loaded successfully'
-        //     ]);
-            
-    
-        // } catch (Exception $e) {
-        //         return response()->json([
-        //             'status'        => false,
-        //             'message'       => $e->getMessage()
-        //         ]);
-        //     }
+
         // $url = "http://localhost:8000/api/banners";
         // $json = file_get_contents($url);
         // // file_put_contents("s.json", $json);
@@ -56,7 +39,10 @@ class HomeController extends Controller
         //     if($response->data()){
         //         return $response;
         //     }
-
+            
+            
+            //$response = $res->data;
+            
         return view('home');
     }
 

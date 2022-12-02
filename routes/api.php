@@ -39,6 +39,7 @@ Route::apiResource('products', 'App\Http\Controllers\API\ProductController');
 Route::apiResource('services', 'App\Http\Controllers\API\ServiceController');
 Route::apiResource('stores', 'App\Http\Controllers\API\StoreController');
 Route::apiResource('users', 'App\Http\Controllers\API\UserController');
+Route::apiResource('dashboard', 'App\Http\Controllers\API\HomeController');
 
 Route::get('index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
