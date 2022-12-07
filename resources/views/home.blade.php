@@ -1,21 +1,11 @@
 <?php
 
 // $s = Http::get("https://www.phprestaurant.trademajestic.com/api/services/");
-// $c = Http::get("https://www.phprestaurant.trademajestic.com/api/categories/");
-// $f = Http::get("https://www.phprestaurant.trademajestic.com/api/featprods/");
-// $m = Http::get("https://www.phprestaurant.trademajestic.com/api/menus/");
-// $o = Http::get("https://www.phprestaurant.trademajestic.com/api/orders/");
-// $b = Http::get("https://www.phprestaurant.trademajestic.com/api/products/");
-// $st = Http::get("https://www.phprestaurant.trademajestic.com/api/stores/");
-// $u = Http::get("https://www.phprestaurant.trademajestic.com/api/users/");
 //banners
 $json = file_get_contents("https://www.phprestaurant.trademajestic.com/api/dashboard/");
 $json_data = json_decode($json, false);
 $datas = $json_data->data;
 $count =0;
-//categories
-
-
 
 ?>
 
@@ -25,55 +15,44 @@ $count =0;
 @section('content')
 @auth
 <div class="container py-5">
-
+<br>
             <div class="card">
                 <div class="card-header">{{ __('Welcome You are successfully logged in!') }}</div>
                 <div class="container ">
                     <div class="row border border-success">
                       <div class="col-sm border border-success">
-                        Total Banners: 
-                       
-                       
-
-                      </div>
-                      <div class="col-sm border border-success">
-                        Total Categories: 
                         
-                      
-
+                        Total Banners: {{ $datas->total_banners}}
                       </div>
                       <div class="col-sm border border-success">
-                        Total Featured Products:
-
-                      
-                    
+                        Total Categories: {{ $datas->total_categories}}
+                      </div>
+                      <div class="col-sm border border-success">
+                        Total Featured Products: {{ $datas->total_featprods}}
                       </div>
                     </div>
 
                     <div class="row border border-success">
                         <div class="col-sm border border-success">
-                          Total Menus:
-                         
-                      
-
+                          Total Menus: {{ $datas->total_menus}}
                         </div>
                         <div class="col-sm border border-success">
-                          Total Orders:
+                          Total Orders: {{ $datas->total_orders}}
                         </div>
                         <div class="col-sm border border-success">
-                          Total Products
+                          Total Products: {{ $datas->total_products}}
                         </div>
                       </div>
                       
                       <div class="row border border-success">
                         <div class="col-sm border border-success">
-                          Total Services:
+                          Total Services: {{ $datas->total_services}}
                         </div>
                         <div class="col-sm border border-success">
-                          Total Stores:
+                          Total Stores: {{ $datas->total_stores}}
                         </div>
                         <div class="col-sm border border-success">
-                          Total Users:
+                          Total Users: {{ $datas->total_users}}
                         </div>
                       </div>
                     </div>

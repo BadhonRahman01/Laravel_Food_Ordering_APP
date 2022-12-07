@@ -1,3 +1,12 @@
+<?php
+//$b = Http::get("https://www.phprestaurant.trademajestic.com/api/banners/");
+// $c = file_get_contents("https://www.phprestaurant.trademajestic.com/api/categories/");
+// $ca = json_decode($c, false);
+// $cats = $ca->data;
+
+    
+?>
+
 @extends('welcome2')
  
 @section('title', 'Category Index')

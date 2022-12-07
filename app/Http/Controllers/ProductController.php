@@ -57,7 +57,7 @@ class ProductController extends Controller
             'status' => 'required',
             'category_id' => 'required',
         ]);
-        $product_data['imageUrl'] = "/public/upload/{$file_name}";
+        $product_data['imageUrl'] = "/upload/{$file_name}";
         Product::create($product_data);
      
         return redirect()->route('products.index')

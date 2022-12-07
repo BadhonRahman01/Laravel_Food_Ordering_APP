@@ -1,24 +1,11 @@
 <?php
 //$b = Http::get("https://www.phprestaurant.trademajestic.com/api/banners/");
-$b = file_get_contents("https://www.phprestaurant.trademajestic.com/api/banners/");
-$ba = json_decode($b, false);
-$bans = $ba->data;
+// $b = file_get_contents("https://www.phprestaurant.trademajestic.com/api/banners/");
+// $ba = json_decode($b, false);
+// $bans = $ba->data;
 
 
-
-
-//in blade template
-// @foreach ($bans as $ban )
-//                           <?php
-//                         if($ban){
-//                             $count = $count +1;
-//                           }
-//                         ?>
-//                         @endforeach
-//                         {{ $count }}
-//                         <?php
-//                         $count =0;
-//                         ?>
+//                         
 ?>
 
 @extends('welcome2')
@@ -33,6 +20,7 @@ $bans = $ba->data;
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('banners.create') }}"> Create New Banner</a>
+                
             </div>
         </div>
     </div>

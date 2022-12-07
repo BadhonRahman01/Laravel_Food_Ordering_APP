@@ -1,3 +1,12 @@
+<?php
+//$b = Http::get("https://www.phprestaurant.trademajestic.com/api/banners/");
+// $s = file_get_contents("https://www.phprestaurant.trademajestic.com/api/services/");
+// $se = json_decode($s, false);
+// $sers = $se->data;
+
+    
+?>
+
 @extends('welcome2')
 @section('title', 'Service Index')
 @section('content')
@@ -8,6 +17,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('services.create') }}"> Create New Service</a>
+                
             </div>
         </div>
     </div>

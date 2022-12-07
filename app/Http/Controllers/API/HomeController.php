@@ -46,7 +46,7 @@ class HomeController extends Controller
                             'total_orders' => $orders,
                             'total_stores' => $stores,
                             'total_users' => $users,
-                            'total_products' => $products],
+                            'total_products' => $products ],
                 'message' => 'Total Model Count Loaded successfully'
             ]);
     

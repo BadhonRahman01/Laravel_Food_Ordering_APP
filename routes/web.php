@@ -36,13 +36,16 @@ Route::get('register', function () {
 });
 
 Route::get('/', function () {
-    return view('home');
+    return view('home2');
 });
 Route::get('/welcome2', function () {
     //$banner = Http::get('http://localhost:8000/api/banners/')->json();
     return view('welcome2');
 });
-
+Route::get('/home2', function () {
+    //$banner = Http::get('http://localhost:8000/api/banners/')->json();
+    return view('home2');
+});
 ////////////////
 Route::get('/categories', function () {
     return view('index');

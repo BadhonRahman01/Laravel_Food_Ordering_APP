@@ -1,3 +1,12 @@
+<?php
+//$b = Http::get("https://www.phprestaurant.trademajestic.com/api/banners/");
+// $o = file_get_contents("https://www.phprestaurant.trademajestic.com/api/orders/");
+// $or = json_decode($o, false);
+// $ords = $or->data;
+
+    
+?>
+
 @extends('welcome2')
 @section('title', 'Order Index')
 @section('content')

@@ -51,7 +51,7 @@ class CategoryController extends Controller
             $picture = $request->imageUrl;
             $file_name = "bn{$category}." . $picture->getClientOriginalExtension();
             $picture->move(public_path('upload'), $file_name);
-            $category_data['imageUrl'] = "/public/upload/{$file_name}";
+            $category_data['imageUrl'] = "/upload/{$file_name}";
         }
 
         

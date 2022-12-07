@@ -63,7 +63,7 @@ class BannerController extends Controller
             'category_id' => 'required',
             
         ]);
-        $banner_data['imageUrl'] = "/public/upload/{$file_name}";
+        $banner_data['imageUrl'] = "/upload/{$file_name}";
     
         Banner::create($banner_data);
      

@@ -1,3 +1,12 @@
+<?php
+//$b = Http::get("https://www.phprestaurant.trademajestic.com/api/banners/");
+// $u = file_get_contents("https://www.phprestaurant.trademajestic.com/api/users/");
+// $us = json_decode($u, false);
+// $urs = $us->data;
+
+    
+?>
+
 @extends('welcome2')
 @section('title', 'User Index')
 
