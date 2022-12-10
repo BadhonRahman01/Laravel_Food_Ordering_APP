@@ -43,6 +43,12 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Image URL:</strong>
+                    <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="image_url" accept="image/*"></span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Product ID:</strong>
                     <input type="integer" name="product_id" value="{{ $featprod->product_id }}" class="form-control" placeholder="ID">
                     <select name="product_id" id="product_id" class="form-control @error('product_id') is-invalid @enderror">

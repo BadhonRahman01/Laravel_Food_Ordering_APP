@@ -128,7 +128,7 @@ if($data->id == 28){
 @foreach ($feats as $feat)
 <div class="ft">
     <a href="{{ route('featprods.show',$feat->id) }}">
-        <img src="https://kfcbd.com/storage/sliders/uwAswUaBGRhl3Zzh5fFcGqTq9.jpg" alt="{{$feat->category_name}}">
+        <img src="{{ $feat->image_url }}" alt="{{$feat->category_name}}">
     </a>
 </div>
     

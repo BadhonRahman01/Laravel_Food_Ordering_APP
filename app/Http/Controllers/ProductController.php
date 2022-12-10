@@ -43,7 +43,7 @@ class ProductController extends Controller
         $product= $request->product_id;
         if($request->hasFile('imageUrl')){
             $picture = $request->imageUrl;
-            $file_name = "bn{$product}." . $picture->getClientOriginalExtension();
+            $file_name = "pr{$product}." . $picture->getClientOriginalExtension();
             $picture->move(public_path('upload'), $file_name);
 
         }

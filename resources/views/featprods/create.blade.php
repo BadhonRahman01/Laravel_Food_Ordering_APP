@@ -24,7 +24,7 @@
     </div>
 @endif
    
-<form action="{{ route('featprods.store') }}" method="POST">
+<form action="{{ route('featprods.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
      <div class="row">
@@ -40,6 +40,17 @@
                 <strong>Name:</strong>
                 <input type="name" name="name" class="form-control" placeholder="Name">
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image URL:</strong>
+                <span class="btn btn-outline-secondary btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists"></span><input type="file" name="image_url" accept="image/*"></span>
+            </div>
+            @error('image_url')
+            <div class="text-danger">
+                {{ $message  }}
+            </div>
+          @enderror
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

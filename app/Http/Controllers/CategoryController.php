@@ -44,12 +44,11 @@ class CategoryController extends Controller
             'category_id' => 'required',
             'name' => 'required',
             'imageUrl' => 'nullable',
-            
         ]);
 
         if($request->hasFile('imageUrl')){
             $picture = $request->imageUrl;
-            $file_name = "bn{$category}." . $picture->getClientOriginalExtension();
+            $file_name = "ct{$category}." . $picture->getClientOriginalExtension();
             $picture->move(public_path('upload'), $file_name);
             $category_data['imageUrl'] = "/upload/{$file_name}";
         }

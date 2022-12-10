@@ -27,6 +27,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Image URL:</strong>
+                {{ $featprod->image_url }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Product ID:</strong>
                 {{ $featprod->product_id }}
             </div>

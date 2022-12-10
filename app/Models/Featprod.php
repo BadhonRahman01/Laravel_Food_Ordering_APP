@@ -21,6 +21,7 @@ class Featprod extends Model
     protected $fillable = [
         'featprod_id',
         'name',
+        'image_url',
         'product_id',
         'category_id',
     ];

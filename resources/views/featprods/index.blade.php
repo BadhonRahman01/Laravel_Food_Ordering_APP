@@ -32,6 +32,7 @@
             <th>Serial No</th>
             <th>Featured Product ID</th>
             <th>Name</th>
+            <th>Image URL:</th>
             <th>Product ID</th>
             <th>Category ID</th>
             <th width="280px">Action</th>
@@ -41,6 +42,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $featprod->featprod_id }}</td>
             <td>{{ $featprod->name }}</td>
+            <td>{{ $featprod->image_url }}</td>
             <td>{{ $featprod->product_id }}</td>
             <td>{{ $featprod->category_id }}</td>
             <td>

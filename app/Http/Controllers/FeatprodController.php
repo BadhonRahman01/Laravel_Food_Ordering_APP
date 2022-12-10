@@ -41,18 +41,25 @@ class FeatprodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $request->validate([
+    {   
+        $fp = $request->featprod_id;
+        if($request->hasFile('image_url')){
+            $picture = $request->image_url;
+            $file_name = "fp{$fp}." . $picture->getClientOriginalExtension();
+            $picture->move(public_path('upload'), $file_name);
+        }
+        $featured_data =  $request->validate([
             'featprod_id' => 'required',
             'name' => 'required',
+            'image_url' => 'nullable',
             'product_id' => 'required',
             'category_id' => 'required',
         ]);
-    
-        Featprod::create($request->all());
-     
+        $featured_data['image_url'] = "/upload/{$file_name}";
+        Featprod::create($featured_data);
+
         return redirect()->route('featprods.index')
-                        ->with('success','Featued Product created successfully.');
+                        ->with('success','Featured Product created successfully.');
     }
 
     /**
@@ -91,6 +98,7 @@ class FeatprodController extends Controller
         $request->validate([
             'featprod_id' => 'required',
             'name' => 'required',
+            'image_url' => 'nullable',
             'product_id' => 'required',
             'category_id' => 'required',
         ]);
