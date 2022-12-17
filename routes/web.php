@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FeatprodController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CartController;
 //use App\Http\Controllers\FeaturedProductController;
 
 /*
@@ -28,6 +29,7 @@ use App\Http\Controllers\OrderController;
 // Route::get('/', function () {
 //     return view('welcome2');
 // });
+
 Route::get('login', function () {
     return view('auth.login');
 });
@@ -39,13 +41,16 @@ Route::get('/', function () {
     return view('home2');
 });
 Route::get('/welcome2', function () {
-    //$banner = Http::get('http://localhost:8000/api/banners/')->json();
     return view('welcome2');
 });
 Route::get('/home2', function () {
-    //$banner = Http::get('http://localhost:8000/api/banners/')->json();
     return view('home2');
 });
+
+Route::get('/product', function () {
+    return view('product');
+})->name('product');
+
 ////////////////
 Route::get('/categories', function () {
     return view('index');
@@ -116,24 +121,30 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
 
-// Route::get('welcome2', function () {
-//     // $banners = "http://localhost:8000/api/banners/";
-//     // $json = json_decode(file_get_contents($banners), true);
-//     // $ban = request('GET','http://localhost:8000/api/banners/');
-//     // $parsed_json = json_decode($banners, true);
-//     // $id = $parsed_json->{'data'}->{'id'};
-//     $url = 'http://localhost:8000/api/banners/';
+// Route::get('products', [ProductController::class, 'products.Chicken'])->name('products.Chicken');
+// Route::get('products', [ProductController::class, 'products.Burger'])->name('products.Burger');
+// Route::get('products', [ProductController::class, 'products.Sandwich'])->name('products.Sandwich');
+// Route::get('products', [ProductController::class, 'products.Snacks'])->name('products.Snacks');
+// Route::get('products', [ProductController::class, 'products.Delivery'])->name('products.Delivery');
+// Route::get('products', [ProductController::class, 'products.Dips'])->name('products.Dips');
+Route::post('products', [ProductController::class, 'products.header'])->name('products.header');
+/////////cart routes
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
-//     $response = file_get_contents($url);
-//     $newsData = json_decode($response);
-//     dd($newsData);
 
-//     //return response()->json($newsData);  
 
-    
-//    // return view('welcome2');
+// Route::get('/', function () {
+//     return view('welcome',[
+//         'users' => App\Models\User::all()
+//     ]);
 // });
-
-// Route::middleware('auth')->group(funtion() {
-// paste the routes without the middleware authentication
-// });
+// Route::get('/product', function () {
+//     return view('product',[
+//                 'datas' => App\Models\Category::all(),
+//                 'prods' => App\Models\Product::all()
+//             ]);
+//         });

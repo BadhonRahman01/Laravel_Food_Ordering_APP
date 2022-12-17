@@ -86,4 +86,154 @@ class ProductController extends Controller
     {
         //
     }
+    public function Chicken(){
+        try{
+            $products = Product::all()->where('category_id', 1);
+           
+            foreach ($products as $product) {
+                if($product->imageUrl == null){
+                $product->imageUrl = " ";
+            }
+            $product->image_url = $product->imageUrl;
+            $product->category_name = "Chicken";
+            unset($product->created_at,$product->updated_at,$product->product_id,$product->imageUrl,$product->category_id);
+            }
+            return response()->json([
+                'status' => true,
+                'data' => $products,
+                'message' => 'Chicken Products list Loaded successfully'
+            ]);
+    
+        } catch (Exception $e) {
+                return response()->json([
+                    'status'        => false,
+                    'message'       => $e->getMessage()
+                ]);
+            }
+    }
+    public function Burger(){
+        try{
+            $products = Product::all()->where('category_id', 2);
+           
+            foreach ($products as $product) {
+                if($product->imageUrl == null){
+                $product->imageUrl = " ";
+            }
+            $product->image_url = $product->imageUrl;
+            $product->category_name = "Burger";
+            unset($product->created_at,$product->updated_at,$product->product_id,$product->imageUrl,$product->category_id);
+            }
+            return response()->json([
+                'status' => true,
+                'data' => $products,
+                'message' => 'Burger Products list Loaded successfully'
+            ]);
+    
+        } catch (Exception $e) {
+                return response()->json([
+                    'status'        => false,
+                    'message'       => $e->getMessage()
+                ]);
+            }
+    }
+    public function Sandwich(){
+        try{
+            $products = Product::all()->where('category_id', 3);
+           
+            foreach ($products as $product) {
+                if($product->imageUrl == null){
+                $product->imageUrl = " ";
+            }
+            $product->image_url = $product->imageUrl;
+            $product->category_name = "Sandwich";
+            unset($product->created_at,$product->updated_at,$product->product_id,$product->imageUrl,$product->category_id);
+            }
+            return response()->json([
+                'status' => true,
+                'data' => $products,
+                'message' => 'Sandwich Products list Loaded successfully'
+            ]);
+    
+        } catch (Exception $e) {
+                return response()->json([
+                    'status'        => false,
+                    'message'       => $e->getMessage()
+                ]);
+            }
+    }
+    public function Snacks(){
+        try{
+            $products = Product::all()->where('category_id', 4);
+           
+            foreach ($products as $product) {
+                if($product->imageUrl == null){
+                $product->imageUrl = " ";
+            }
+            $product->image_url = $product->imageUrl;
+            $product->category_name = "Snacks";
+            unset($product->created_at,$product->updated_at,$product->product_id,$product->imageUrl,$product->category_id);
+            }
+            return response()->json([
+                'status' => true,
+                'data' => $products,
+                'message' => 'Snacks Products list Loaded successfully'
+            ]);
+    
+        } catch (Exception $e) {
+                return response()->json([
+                    'status'        => false,
+                    'message'       => $e->getMessage()
+                ]);
+            }
+    }
+    public function Rice_Bowl(){
+        try{
+            $products = Product::all()->where('category_id', 5);
+           
+            foreach ($products as $product) {
+                if($product->imageUrl == null){
+                $product->imageUrl = " ";
+            }
+            $product->image_url = $product->imageUrl;
+            $product->category_name = "Rice Bowl";
+            unset($product->created_at,$product->updated_at,$product->product_id,$product->imageUrl,$product->category_id);
+            }
+            return response()->json([
+                'status' => true,
+                'data' => $products,
+                'message' => 'Rice Bowl Products list Loaded successfully'
+            ]);
+    
+        } catch (Exception $e) {
+                return response()->json([
+                    'status'        => false,
+                    'message'       => $e->getMessage()
+                ]);
+            }
+    }
+    public function Dips(){
+        try{
+            $products = Product::all()->where('category_id', 9);
+           
+            foreach ($products as $product) {
+                if($product->imageUrl == null){
+                $product->imageUrl = " ";
+            }
+            $product->image_url = $product->imageUrl;
+            $product->category_name = "Dips";
+            unset($product->created_at,$product->updated_at,$product->product_id,$product->imageUrl,$product->category_id);
+            }
+            return response()->json([
+                'status' => true,
+                'data' => $products,
+                'message' => 'Dips Products list Loaded successfully'
+            ]);
+    
+        } catch (Exception $e) {
+                return response()->json([
+                    'status'        => false,
+                    'message'       => $e->getMessage()
+                ]);
+            }
+    }
 }

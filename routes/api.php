@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\API\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ use App\Http\Controllers\HomeController;
 
 Route::apiResource('banners', 'App\Http\Controllers\API\BannerController');
 Route::apiResource('categories', 'App\Http\Controllers\API\CategoryController');
-Route::apiResource('featprods', 'App\Http\Controllers\API\FeatprodController');
+Route::apiResource('featured_products', 'App\Http\Controllers\API\FeatprodController');
 Route::apiResource('menus', 'App\Http\Controllers\API\MenuController');  
 Route::apiResource('orders', 'App\Http\Controllers\API\OrderController');
 Route::apiResource('products', 'App\Http\Controllers\API\ProductController');
@@ -41,7 +42,17 @@ Route::apiResource('stores', 'App\Http\Controllers\API\StoreController');
 Route::apiResource('users', 'App\Http\Controllers\API\UserController');
 Route::apiResource('dashboard', 'App\Http\Controllers\API\HomeController');
 
-Route::get('index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//////////////
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/product.chicken', 'Chicken');
+    Route::get('/product.burger', 'Burger');
+    Route::get('/product.sandwich', 'Sandwich');
+    Route::get('/product.ricebowl', 'Rice_Bowl');
+    Route::get('/product.snacks', 'Snacks');
+    Route::get('/product.dips', 'Dips');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

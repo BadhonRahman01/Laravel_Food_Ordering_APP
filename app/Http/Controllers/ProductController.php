@@ -126,4 +126,62 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
+    // public function Chicken()
+    // {
+    //  $header= "Chicken"   ;
+    //    return $header;
+    // }
+    // public function Burger()
+    // {
+    //  $header= "Burger"   ;
+    //    return $header;
+    // }
+    // public function Sandwich()
+    // {
+    //  $header= "Sandwich"   ;
+    //    return $header;
+    // }
+    // public function Snacks()
+    // {
+    //  $header= "Snacks"   ;
+    //    return $header;
+    // }
+    // public function Delivery()
+    // {
+    //  $header= "Delivery"   ;
+    //    return $header;
+    // }
+    // public function Dips()
+    // {
+    //  $header= "Dips"   ;
+    //    return $header;
+    // }
+      public function header(Product $product)
+    {   
+        if($product == "Chicken"){
+            $header = "Chicken";
+            view('product', $header);
+            }elseif ($product == "Burger") {
+                $header = "Burger";
+                view('product', $header);
+            }
+            elseif ($product == "Sandwich") {
+                $header = "Sandwich";
+                view('product', $header);
+            }
+            elseif ($product == "Snacks") {
+                $header = "Snacks";
+                view('product', $header);
+            }
+            elseif ($product == "Dips") {
+                $header = "Dips";
+                view('product', $header);
+            }
+    
+
+
+    }
+
+
+
 }

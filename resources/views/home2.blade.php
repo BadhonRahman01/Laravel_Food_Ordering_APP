@@ -104,17 +104,23 @@ if($data->id == 28){
                 <div class="row justify-content-md-center">
                   <div class="col col-lg-2">
                     <div class="d-grid gap-2">
-                    <button type="button" class="btn btn-danger btn-lg pl-5 pr-5">Delivery</button>
+                        <a href="{{ route('product') }}">
+                    <button type="button" class="btn btn-danger btn-lg pl-5 pr-5" >Delivery</button>
+                </a>
                 </div>
                   </div>
                   <div class="col col-lg-2">
                     <div class="d-grid gap-2">
-                        <button type="button" class="btn btn-danger btn-lg pl-5 pr-5">Takeaway</button>
+                        <a href="{{ route('product') }}">
+                        <button type="button" class="btn btn-danger btn-lg pl-5 pr-5" href="{{ route('product') }}">Takeaway</button>
+                    </a>
                     </div>
                   </div>
                   <div class="col col-lg-2">
                     <div class="d-grid gap-2">
-                        <button type="button" class="btn btn-danger btn-lg pl-5 pr-5">Dine-in</button>
+                        <a href="{{ route('product') }}">
+                        <button type="button" class="btn btn-danger btn-lg pl-5 pr-5" href="{{ route('product') }}">Dine-in</button>
+                    </a>
                     </div>
                   </div>
                 </div>
@@ -127,7 +133,7 @@ if($data->id == 28){
 <br>
 @foreach ($feats as $feat)
 <div class="ft">
-    <a href="{{ route('featprods.show',$feat->id) }}">
+    <a href="{{ route('product') }}">
         <img src="{{ $feat->image_url }}" alt="{{$feat->category_name}}">
     </a>
 </div>
